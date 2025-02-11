@@ -77,9 +77,48 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('ชื่อของคุณคือ: ใส่ชื่อของตัวเอง')">ปุ่มที่ 1</button>
+    <!-- Internal JavaScript -->
+    <button id="btn2">ปุ่มที่ 2</button>
+    <!-- External JavaScript -->
+    <button id="btn3" onclick="hello3();">ปุ่มที่ 3</button>
+    <br><br>
+    <!-- กล่องข้อความและปุ่มสำหรับแสดงผล -->
+    <input type="text" id="textInput" placeholder="กรอกข้อความที่นี่">
+    <button onclick="showText()">แสดงข้อความ</button>
+    <p id="outputText"></p>
+    <!-- Internal JavaScript -->
+    <script>
+        // ปุ่มที่ 2: แสดงวันที่ปัจจุบัน
+        document.getElementById('btn2').onclick = function() {
+            let today = new Date();
+            alert('วันที่ปัจจุบันคือ: ' + today.toLocaleDateString('th-TH'));
+        };
+        // ฟังก์ชันแสดงข้อความจาก input
+        function showText() {
+            let text = document.getElementById('textInput').value;
+            document.getElementById('outputText').innerText = 'ข้อความที่คุณป้อน: ' + text;
+        }
+    </script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 1]
-  
+![Screenshot 2025-02-11 165425](https://github.com/user-attachments/assets/3c8697c3-0fae-4fa6-9637-6adee04100fe)
+![Screenshot 2025-02-11 165255](https://github.com/user-attachments/assets/07f4d354-5f97-4fe5-a500-c082f729d4e6)
+![Screenshot 2025-02-11 165522](https://github.com/user-attachments/assets/0773f07e-00b0-4e5d-979b-092a628d5bf2)
+
+
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 
